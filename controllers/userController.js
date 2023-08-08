@@ -38,7 +38,7 @@ const sendVerifyMail = async(name, email, user_id) => {
             requireTLS: true,
             auth: {
                 user: 'mradulv26@gmail.com',
-                pass: 'drjlbzubrhukypca'
+                pass: 'icoaselfwbdzanhc'
             }
         });
 
@@ -47,7 +47,7 @@ const sendVerifyMail = async(name, email, user_id) => {
              from: "mradulv26@gmail.com",
              to: email,
              subject: "for verification mail",
-             html: '<p>Hii ' +name+ ' please click here to <a href="http://localhost:3000/verify?id='+ user_id +'">Verify</a> Your mail.</p>'
+             html: '<p>Hii ' +name+ ' please click here to <a href="https://fortune-maker.onrender.com//verify?id='+ user_id +'">Verify</a> Your mail.</p>'
         };
 
         transporter.sendMail(mailOptions, function(err,info){
