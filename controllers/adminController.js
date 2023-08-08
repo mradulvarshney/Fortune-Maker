@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const loadLogin = async(req, res) => {
     try {
         return res.render('login');
-    } catch (error) {
+    } catch (error) { 
         console.log("error while loading login page", error.message);
     }
 };

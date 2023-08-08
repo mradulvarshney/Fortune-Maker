@@ -39,7 +39,7 @@ const upload = multer({storage: storage});
 
 // controller should be defined to use the methods
 const user_controller = require("../controllers/userController"); // load register is available here
-user_route.get('/register', auth.isLogout, user_controller.loadRegister);
+user_route.get('/register', auth.isLogout, user_controller.loadRegister); 
 
 // getting the user data from form
 user_route.post('/register', upload.single('image'), user_controller.insertUser);

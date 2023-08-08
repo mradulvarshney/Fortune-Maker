@@ -10,13 +10,13 @@ const bcrypt = require('bcrypt');
 
 // for sending the emails
 const nodemailer = require('nodemailer');
-
+ 
 const randomString = require('randomstring');
 
 // const regexp = require('regexp');
 
 // encrypting password using bcrypt
-const securePassword = async(password) => {
+const securePassword = async function(password){
     try {
         // the Blowfish encryption algorithm
         const passwordHash = await bcrypt.hash(password, 10);
@@ -37,14 +37,14 @@ const sendVerifyMail = async(name, email, user_id) => {
             secure: false,
             requireTLS: true,
             auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD
+                user: 'mradulv26@gmail.com',
+                pass: 'drjlbzubrhukypca'
             }
         });
 
         // providing which mail will send the mail
         const mailOptions = {
-             from: process.env.EMAIL,
+             from: "mradulv26@gmail.com",
              to: email,
              subject: "for verification mail",
              html: '<p>Hii ' +name+ ' please click here to <a href="http://localhost:3000/verify?id='+ user_id +'">Verify</a> Your mail.</p>'
@@ -121,7 +121,7 @@ const insertUser = async(req, res) =>{
         }
     } catch (error) {
         console.log("error while registering:- ",error.message);
-        return res.render('registration', {message: 'User email already exits'});
+        return res.render('registration', {message: 'User registration failed'});
     }
 }
 
@@ -156,7 +156,7 @@ const loginLoad = async(req, res) => {
 const verifyLogin = async(req, res) => {
     try {
         const email = req.body.email;
-        const password = req.body.password;
+        const password = req.body.password; 
 
         // checking if user exists and verified or not
         const userData = await User.findOne({email: email});
@@ -262,8 +262,8 @@ const sendResetPasswordMail = async(name, email, token) => {
             secure: false,
             requireTLS: true,
             auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD
+                user: 'mradulv26@gmail.com',
+                pass: 'drjlbzubrhukypca'
             }
         });
 
@@ -427,7 +427,7 @@ module.exports = {
     loadRegister,
     insertUser,
     verifyMail,
-    loginLoad,
+    loginLoad, 
     verifyLogin,
     loadHome,
     userLogout,

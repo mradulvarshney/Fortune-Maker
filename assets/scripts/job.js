@@ -49,7 +49,7 @@ mobileLink.addEventListener("click",function(){
 
 //  Search Bar functionality
 const searchFun= () =>{
-    let filter = document.getElementById('input').value.toUpperCase();
+    let filter = document.getElementById('input').value.toUpperCase(); 
     let data = document.getElementsByClassName('job-card');
     let skillsSet = document.getElementsByClassName('job-label');
 
